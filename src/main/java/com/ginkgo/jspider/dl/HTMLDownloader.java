@@ -3,7 +3,7 @@
  * download file for given URL or content.<br>
  * @author Asparagus
  */
-package com.ginkgo.jspider;
+package com.ginkgo.jspider.dl;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -11,7 +11,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import lombok.extern.log4j.Log4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Download for HTML files.
@@ -19,8 +20,8 @@ import lombok.extern.log4j.Log4j;
  * @author Asparagus 2016-08-27
  *
  */
-@Log4j
 public class HTMLDownloader extends Downloader {
+	private Log log = LogFactory.getLog(this.getClass());
 
 	/**
 	 * Accepted File Extend.

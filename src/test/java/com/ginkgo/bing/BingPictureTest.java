@@ -1,14 +1,14 @@
 package com.ginkgo.bing;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.ginkgo.jspider.BingPicture;
 
-import lombok.extern.log4j.Log4j;
-
-@Log4j
 public class BingPictureTest {
+	private Log log = LogFactory.getLog(this.getClass());
 
 	@Before
 	public void init() {

@@ -12,11 +12,12 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import lombok.extern.log4j.Log4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-@Log4j
 public class WebLogin {
-
+	private Log log = LogFactory.getLog(this.getClass());
+	
 	public WebLogin(URL url) {
 		this.setConnection(url);
 	}

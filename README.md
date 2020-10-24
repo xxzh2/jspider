@@ -1,7 +1,7 @@
 ##
 一个爬虫的例子
 ##maven
-```
+```python
 mvn eclipse:eclipse
 ```
 

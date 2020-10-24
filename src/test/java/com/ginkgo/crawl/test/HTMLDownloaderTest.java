@@ -1,13 +1,13 @@
 package com.ginkgo.crawl.test;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 
-import com.ginkgo.jspider.HTMLDownloader;
+import com.ginkgo.jspider.dl.HTMLDownloader;
 
-import lombok.extern.log4j.Log4j;
-
-@Log4j
 public class HTMLDownloaderTest {
+	private Log log = LogFactory.getLog(this.getClass());
 
 	@Test
 	public void testGetLocalDir() {

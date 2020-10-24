@@ -4,9 +4,9 @@ import java.text.MessageFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
-
-import lombok.extern.log4j.Log4j;
 
 /**
  * RegExp Tests
@@ -14,8 +14,8 @@ import lombok.extern.log4j.Log4j;
  * @author Think
  *
  */
-@Log4j
 public class RegTest {
+	private Log log = LogFactory.getLog(this.getClass());
 
 //	@Test
 	public void main() {

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ginkgo</groupId>
 	<artifactId>jspider</artifactId>
-	<version>0.0.6</version>
+	<version>0.1.0</version>
 
 	<name>Bing Crawl</name>
 	<url>http://www.bing-crawl.org</url>
@@ -75,12 +75,6 @@
 			<artifactId>json-lib</artifactId>
 			<version>2.4</version>
 			<classifier>jdk15</classifier>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.16.22</version>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -177,6 +171,10 @@
 			<id>central</id>
 			<url>http://repo.tydic-ctg.com/repository/internal/</url>
 		</repository>
+		<repository>
+            <id>public</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
 	</repositories>
 
 	<pluginRepositories>

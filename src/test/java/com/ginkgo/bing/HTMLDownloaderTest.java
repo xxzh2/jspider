@@ -2,7 +2,7 @@ package com.ginkgo.bing;
 
 import org.junit.Test;
 
-import com.ginkgo.jspider.HTMLDownloader;
+import com.ginkgo.jspider.dl.HTMLDownloader;
 
 public class HTMLDownloaderTest {
 

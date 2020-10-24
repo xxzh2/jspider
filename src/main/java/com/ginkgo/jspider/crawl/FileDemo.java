@@ -8,13 +8,14 @@ package com.ginkgo.jspider.crawl;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import lombok.extern.log4j.Log4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 // Referenced classes of package net.suman:
 //            Localization
-@Log4j
 public class FileDemo {
-
+	private static Log log = LogFactory.getLog(FileDemo.class);
+	
 	public FileDemo() {
 	}
 
