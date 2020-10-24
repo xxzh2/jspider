@@ -24,8 +24,8 @@ mvn dashboard:dashboard
 mvn sonar:sonar
 ```
 
-###maven->gradle
+## 
+maven->gradle
 gradle init --type pom
 
-##gradle
 gradle build -x test
