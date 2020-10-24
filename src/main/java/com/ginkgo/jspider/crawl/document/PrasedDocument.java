@@ -14,23 +14,31 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Parsed Document.
- * {@value #log}
+ * Parsed Document. {@value #log}
+ * 
  * @author Asparagus
  *
  */
 public class PrasedDocument {
-	
+
 	static final Log log = LogFactory.getLog("PrasedDocument");
-	
+
 	private Document doc;
 	private String url;
-	private String charset;
+	private String charset = "UTF-8";
 
 	public PrasedDocument(URL arg0) {
 		doc = null;
 		url = null;
-		charset = "UTF-8";
+		url = arg0.toString();
+		init();
+	}
+
+	public PrasedDocument(URL arg0, String charset) {
+		doc = null;
+		url = null;
+		if (charset != null)
+			this.charset = charset;
 		url = arg0.toString();
 		init();
 	}
@@ -38,7 +46,6 @@ public class PrasedDocument {
 	public PrasedDocument(String arg0) {
 		doc = null;
 		url = null;
-		charset = "UTF-8";
 		url = arg0;
 		init();
 	}
@@ -46,7 +53,6 @@ public class PrasedDocument {
 	public PrasedDocument(String arg0, String charset) {
 		doc = null;
 		url = null;
-		this.charset = "UTF-8";
 		url = arg0;
 		this.charset = charset;
 		init();
@@ -78,11 +84,11 @@ public class PrasedDocument {
 			log.error(e);
 		}
 		log.info(new StringBuilder().append("charset:" + _charset)//
-				.append("response:" + _response)//
-				.append("_contentType:" + _contentType)//
-				.append("_httpequiv:" + _httpequiv)//
-				.append("_headers:" + _headers)//
-				.append("_cookies:" + _cookies)//
+				.append("\nresponse:" + _response)//
+				.append("\ncontentType:" + _contentType)//
+				.append("\nhttpequiv:" + _httpequiv)//
+				.append("\nheaders:" + _headers)//
+				.append("\ncookies:" + _cookies)//
 		);
 
 	}
@@ -90,6 +96,20 @@ public class PrasedDocument {
 	public Elements getElementsByTag(String tagName) {
 		if (doc != null)
 			return doc.getElementsByTag(tagName);
+		else
+			return null;
+	}
+
+	public Elements getElementsByClass(String className) {
+		if (doc != null)
+			return doc.getElementsByClass(className);
+		else
+			return null;
+	}
+
+	public Element getElementById(String id) {
+		if (doc != null)
+			return doc.getElementById(id);
 		else
 			return null;
 	}
@@ -109,6 +129,10 @@ public class PrasedDocument {
 		String html = null;
 		html = doc.html();
 		return html;
+	}
+
+	public String getUrl() {
+		return this.url;
 	}
 
 }

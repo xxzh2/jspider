@@ -3,7 +3,7 @@
  * download file for given URL or content.<br>
  * @author Asparagus
  */
-package com.ginkgo.jspider;
+package com.ginkgo.jspider.dl;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,10 +11,12 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import lombok.extern.log4j.Log4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-@Log4j
+
 public class ImageDownloader extends Downloader {
+	private Log log = LogFactory.getLog(this.getClass());
 
 	final static String[] FILE_TYPE = { ".png", ".jpg" };
 

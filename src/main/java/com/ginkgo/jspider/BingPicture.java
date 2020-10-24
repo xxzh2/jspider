@@ -11,14 +11,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.ginkgo.jspider.crawl.Localization;
 import com.ginkgo.jspider.crawl.document.PrasedDocument;
-
-import lombok.extern.log4j.Log4j;
+import com.ginkgo.jspider.dl.ImageDownloader;
 
 /**
  * Download Bing Background Image.
@@ -27,8 +28,8 @@ import lombok.extern.log4j.Log4j;
  * @author Asparagus 2016-08-26
  *
  */
-@Log4j
 public class BingPicture {
+	private Log log = LogFactory.getLog(this.getClass());
 	/**
 	 * Version: {@value #VER}
 	 */

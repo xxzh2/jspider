@@ -1,4 +1,4 @@
-package com.ginkgo.jspider;
+package com.ginkgo.jspider.dl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,10 +6,12 @@ import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import lombok.extern.log4j.Log4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-@Log4j
 public abstract class Downloader implements Duplicate {
+	private Log log = LogFactory.getLog(this.getClass());
+
 	/**
 	 * Get default base path.
 	 *
@@ -21,14 +23,17 @@ public abstract class Downloader implements Duplicate {
 		try {
 			prop = load();
 			downloaderDefault = prop.getProperty("downloader.default", System.getProperty("user.dir"));
-			// System.out.println("Default: " + downloaderDefault);
 		} catch (IOException e) {
 			log.error(e);
 		}
-		//
 		return downloaderDefault == null ? System.getProperty("user.home") : downloaderDefault;
 	}
 
+	/**
+	 * 支持${user.home}取变量路径模式
+	 * 
+	 * @throws IOException
+	 */
 	public Properties load() throws IOException {
 		Properties prop = new Properties();
 		InputStream ins = null;

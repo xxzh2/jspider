@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.ginkgo.jspider;
+package com.ginkgo.jspider.dl;
 
 import java.io.File;
 import java.util.List;
